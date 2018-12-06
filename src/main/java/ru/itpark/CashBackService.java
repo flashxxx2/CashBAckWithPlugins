@@ -7,11 +7,24 @@ public class CashBackService {
 
     public int calculateCashback(int category1, int category2, int category3) {
         int bonus1 = category1 * percent1 / 100;
+        if (bonus1 > 3000){
+            bonus1=3000;
+        }
 
         int bonus2 = category2 * percent2 / 100;
+        if (bonus2 > 3000){
+            bonus2=3000;
+        }
         int bonus3 = category3 * percent3 / 100;
+        if (bonus3 > 3000){
+            bonus3=3000;
+        }
         int cashBack = bonus1 + bonus2 + bonus3;
-        return cashBack;
+        int percent = cashBack;
+        if (percent > 3000) {
+            return 3000;
+        }
+        return percent;
 
     }
 }
